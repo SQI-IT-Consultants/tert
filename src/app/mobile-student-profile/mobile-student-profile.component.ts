@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute,Router,ParamMap } from '@angular/router';
 import { StudentService } from '../student.service';
+import { StudlistComponent } from '../studlist/studlist.component';
 @Component({
   selector: 'app-mobile-student-profile',
   templateUrl: './mobile-student-profile.component.html',
@@ -10,7 +11,7 @@ export class MobileStudentProfileComponent implements OnInit {
   message;
   public studentId;
   constructor(private route: ActivatedRoute, private router:Router,private data:StudentService) { }
-
+ 
   ngOnInit() {
     this.data.currentMessage.subscribe(message => this.message = message)
     // let id = parseInt(this.route.snapshot.paramMap.get('id'));
@@ -27,6 +28,7 @@ export class MobileStudentProfileComponent implements OnInit {
     
     let nextId = this.studentId+1;
     this.message[0].name = 'sww';
+    
     alert(this.message[0].name);
     this.router.navigate(['/student',nextId]);
   }

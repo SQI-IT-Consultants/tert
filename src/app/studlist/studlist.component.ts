@@ -22,7 +22,6 @@ export class StudlistComponent implements OnInit {
   {
     this.router.navigate(['/student',x.id]);
   }
- 
   public details = [
     {
       "id":"0",
