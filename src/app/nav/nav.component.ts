@@ -33,7 +33,7 @@ export class NavComponent implements OnInit {
                                 {"id":"3","name":"Webmail SignIn","link":"/mail/webmailSignIn"},
                                 {"id":"4","name":"SMS usage Report","link":"/mail/smsReport"}
                               ]},
-                        {"id":"3","name":"Student Detail",icon:"fa fa-user", 
+                        {"id":"3","name":"Student",icon:"fa fa-user", 
                               sub:[{"id":"0","name":"Student Default","link":"/student/studentDefaultmail/smsStudent"},
                                     {"id":"1", "name":"New Student","link":"/student/studentNew"},
                                     {"id":"2", "name":"Student List","link":"student/studentList"},
@@ -143,7 +143,7 @@ export class NavComponent implements OnInit {
                                     {"id":"4","name":"SMS usage Report","link":"/mail/smsReport"}]
                         },
                         {
-                          "name":"Student Detail",
+                          "name":"Student",
                           "id":"3", sub:[{"id":"0","name":"Student Default","link":"/student/studentDefaultmail/smsStudent"},
                                     {"id":"1", "name":"New Student","link":"/student/studentNew"},
                                     {"id":"2", "name":"Student List","link":"student/studentList"},

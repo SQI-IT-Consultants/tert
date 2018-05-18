@@ -23,24 +23,7 @@ export class MobileStudentProfileComponent implements OnInit {
     })
 
   }
-  nextStudrec()
-  {
-    
-    let nextId = this.studentId+1;
-    this.message[0].name = 'sww';
-    
-    alert(this.message[0].name);
-    this.router.navigate(['/student',nextId]);
-  }
-  prevStudrec()
-  {
-    if(this.studentId>=1)
-    {
-      let prevId = this.studentId-1;
-      this.router.navigate(['/student',prevId]);
-    }
-     
-  }
+  
   back()
   {
     let selectedId = this.studentId? this.studentId:null;

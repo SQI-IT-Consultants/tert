@@ -1,0 +1,116 @@
+<mat-card class="container-fluid">
+    <mat-card-content>
+      <div *ngIf="display; then thenBlock; else elseBlock"></div>
+      <ng-template #thenBlock>
+          <div fxLayout ="row" fxLayout.xs="row" fxLayoutGap fxLayoutAlign="space-between">
+              <div fxFlex="80" fxFlex.xs="60">
+                <div class="container">
+                  <div class="row">
+                      <div class="col-md-6 x" style="margin-top: -10px;color:#000;margin-bottom: -10px">
+                            <p><strong>{{message[0].name}}</strong></p>
+                      </div>
+                      <div class="col-md-6 x">
+                            {{message[0].matric_no}}
+                      </div>
+                    </div>
+                  <div fxShow="true" fxHide.lt-md="true"  class="row" >
+                      <div class="col-md-6 x">
+                          {{message[0].email}}
+                        </div>
+                        <div class="col-md-6 x">
+                            {{message[0].mobile}}
+                        </div>
+                   </div>
+                </div>
+              </div>
+              
+              <div fxFlex="10" fxFlex.xs="20">
+                  <img src="{{message[0].pic}}" class="img-fluid" style="width:50px;height:50px;border-radius: 50px">
+              </div>
+            </div>
+      </ng-template>
+      
+      <mat-tab-group class="demo-tab-group">
+        <mat-tab label="Staff Data">
+          <div class="demo-tab-content container-fluid">
+            <div class="row">
+              <div class="col-md-12">
+                  {{message[0].name}}
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue.
+                  Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus.
+                  In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec,
+                  feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor,
+                  orci enim rutrum enim, vel tempor sapien arcu a tellus.
+                  Sabelo Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue.
+                  Phasellus volutpat neque ac dui mattis vulputat. Etiam consequat aliquam cursus.
+                  In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec,
+                  feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor,
+                  orci enim rutrum enim, vel tempor sapien arcu a tellus.
+                  Sabelo Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue.
+                  Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus.
+                  In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec,
+                  feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor,
+                  orci enim rutrum enim, vel tempor sapien arcu a tellus.
+                  Sabelo Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue.
+                  Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus.
+                  In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec,
+                  feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor sapien arcu a tellus.
+      
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+        <mat-tab label="Documents">
+          <div class="demo-tab-content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue.
+            Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus.
+            In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec,
+            feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor,
+            orci enim rutrum enim, vel tempor sapien arcu a tellus.
+          </div>  
+        </mat-tab>
+        <mat-tab label="Payment History">
+          <div class="demo-tab-content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue.
+            Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus.
+            In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec,
+            feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor,
+            orci enim rutrum enim, vel tempor sapien arcu a tellus.
+            <br />
+            <br />
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue.
+            Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus.
+            In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec,
+            feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor,
+            orci enim rutrum enim, vel tempor sapien arcu a tellus.
+          </div>  
+        </mat-tab>
+        <mat-tab label="Add Course">
+          No content  
+        </mat-tab>
+        <mat-tab label="Additional">
+          No content  
+        </mat-tab>
+        <mat-tab label="FllowUps">
+            No content  
+        </mat-tab>
+        <mat-tab label="Assesment Record">
+            No content  
+        </mat-tab>
+        <mat-tab label="Performance Report">
+            No content  
+        </mat-tab>
+        <mat-tab label="Messaging">
+            No content  
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card-content>
+  </mat-card>
+  
+ 
+
+
+<!-- </div> -->
+<!-- </div> -->
+
+
