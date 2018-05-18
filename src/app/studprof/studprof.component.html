@@ -7,18 +7,18 @@
                           <div class="container">
                             <div class="row">
                                 <div class="col-md-6 x" style="margin-top: -10px;color:#000;margin-bottom: -10px">
-                                      <p><strong>BELLO SAMUEL</strong></p>
+                                      <p><strong>{{message[0].name}}</strong></p>
                                 </div>
                                 <div class="col-md-6 x">
-                                      14420394
+                                      {{message[0].matric_no}}
                                 </div>
                               </div>
                             <div fxShow="true" fxHide.lt-md="true"  class="row" >
                                 <div class="col-md-6 x">
-                                    beloooodehehfhe8y38y4
+                                    {{message[0].email}}
                                   </div>
                                   <div class="col-md-6 x">
-                                    0289394898494
+                                      {{message[0].mobile}}
                                   </div>
                              </div>
                           </div>
@@ -33,6 +33,7 @@
                 <mat-tab-group class="demo-tab-group">
                   <mat-tab label="Student Data">
                     <div class="demo-tab-content">
+                      {{message[0].name}}
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue.
                       Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus.
                       In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec,
