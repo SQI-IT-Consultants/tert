@@ -1,0 +1,31 @@
+.example-icon {
+    padding: 0 14px;
+  }
+  mat-toolbar{box-shadow: 0 0 3px 2px  black}
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  li{list-style-type: none}
+  a{color: #fff}
+  .secmat{background-color:green;
+            height: 25px;
+            font-size: 12px;padding-bottom: 7px;padding-top:10px;padding-top: 20px;position:relative;top:4px;padding-bottom:18px} 
+    .secmat button{padding-left: 1px;color:#fff;}
+    
+    @media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
+    @media (min-width:1281px) { /* hi-res laptops and desktops */ }
+    .example-container {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+      mat-expansion-panel{
+        /* padding: 10px */
+        padding-bottom: -10px
+      }
+      mat-toolbar li{border-right:1px solid rgb(32, 3, 3);}
+      mat-list{position: relative;top:-10px;bottom: 0}
+      mat-list-item{margin-top:-20px}
+    

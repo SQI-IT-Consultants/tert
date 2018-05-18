@@ -1,0 +1,14 @@
+.fluid{
+    width:100%;
+    height:100%;
+    border-radius:100px
+}
+.check div{border: none;
+            background: none;
+            border-bottom: 1px solid #cccccc;
+           font-size: 12px  
+           }    
+.check label{font-size: 12px}
+.form-group{margin-left:-20px}
+.closeholder{position: relative;width: 100%;margin-bottom:5px;padding:5p}
+.closeholder button{background: none}

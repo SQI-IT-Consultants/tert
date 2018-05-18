@@ -1,0 +1,226 @@
+ <!-- HIDE ON MED AND SMALL DEVICES SHOW ON LARGE -->
+
+ <div fxShow="true" fxHide.lt-md="true" >
+        <div class="row">
+            <!-- <mat-sidenav-container  class="example-sidenav-content">
+                <div>
+                    <button mat-button class="sidenav-toggle mat-button" (click)="sidenav.open()">
+                        dwh
+                    </button>
+                </div>
+                <mat-sidenav #sidenav class="example-sidenav">
+                    jwjdowjoj
+                </mat-sidenav>
+                <div class="">
+                    djejdfejfijfinfrueuergeuhtni
+                </div>
+            </mat-sidenav-container> -->
+           
+      
+            <mat-drawer-container class="example-container" autosize>
+                    <mat-drawer #drawer class="example-sidenav aSide" mode="side" opened="true">
+                        <div>
+                                <form class="pad">
+                                <input type="search" class="form-control" placeholder="Search Here">
+                                </form>
+                                <div class="row">
+                                <div class="col-md-12 det" *ngFor="let det of details" (click)="setProfile(det)">
+                                    <div class="row mt-2">
+                                        <div class="col-md-2">
+                                            <img src="{{det.pic}}">
+                                        </div>
+                                        <div class="offset-2 col-md-5">
+                                            <h6>{{det.name}}</h6>
+                                            <p>{{det.matric_no}}</p>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                    
+                                </div>
+                        </div>
+                    </mat-drawer>
+                
+                <div class="example-sidenav-content">
+                  <!-- <button type="button" mat-button (click)="drawer.toggle()">
+                    Toggle sidenav
+                  </button> -->
+                    <!-- <div class="row"> -->
+                        <div class="container">
+                            <mat-card>
+                                <mat-card-content>
+                                  <h2 class="example-h2">STUDENT FULL PROFILE</h2>
+                                  <mat-tab-group class="demo-tab-group">
+                                    <mat-tab label="Student Data">
+                                      <div class="demo-tab-content">
+                                        Sabelo Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue.
+                                        Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus.
+                                        In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec,
+                                        feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor,
+                                        orci enim rutrum enim, vel tempor sapien arcu a tellus.
+                                        Sabelo Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue.
+                                        Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus.
+                                        In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec,
+                                        feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor,
+                                        orci enim rutrum enim, vel tempor sapien arcu a tellus.
+                                        Sabelo Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue.
+                                        Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus.
+                                        In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec,
+                                        feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor,
+                                        orci enim rutrum enim, vel tempor sapien arcu a tellus.
+                                        Sabelo Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue.
+                                        Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus.
+                                        In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec,
+                                        feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor sapien arcu a tellus.
+      
+                                      </div>
+                                    </mat-tab>
+                                    <mat-tab label="Documents">
+                                      <div class="demo-tab-content">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue.
+                                        Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus.
+                                        In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec,
+                                        feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor,
+                                        orci enim rutrum enim, vel tempor sapien arcu a tellus.
+                                      </div>  
+                                    </mat-tab>
+                                    <mat-tab label="Payment History">
+                                      <div class="demo-tab-content">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue.
+                                        Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus.
+                                        In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec,
+                                        feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor,
+                                        orci enim rutrum enim, vel tempor sapien arcu a tellus.
+                                        <br />
+                                        <br />
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue.
+                                        Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus.
+                                        In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec,
+                                        feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor,
+                                        orci enim rutrum enim, vel tempor sapien arcu a tellus.
+                                      </div>  
+                                    </mat-tab>
+                                    <mat-tab label="Add Course">
+                                      No content  
+                                    </mat-tab>
+                                    <mat-tab label="Additional">
+                                      No content  
+                                    </mat-tab>
+                                    <mat-tab label="FllowUps">
+                                        No content  
+                                    </mat-tab>
+                                    <mat-tab label="Assesment Record">
+                                        No content  
+                                    </mat-tab>
+                                    <mat-tab label="Performance Report">
+                                        No content  
+                                    </mat-tab>
+                                    <mat-tab label="Messaging">
+                                        No content  
+                                    </mat-tab>
+                                  </mat-tab-group>
+                                </mat-card-content>
+                              </mat-card>
+                              
+                             
+                        </div>
+                        
+                    <!-- </div> -->
+                </div>
+                <mat-drawer #drawer class="example-sidenav" mode="side" opened="true" position="end" style="font-size :12px;">
+                    <div class="row spro">
+                        <div class="offset-1 col-md-10" align="center">
+                            <img src="{{pic}}" class="img-fluid text-center">
+                        </div>
+                        <div class="col-md-12">
+                            <mat-list>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        Name 
+                                    </div>
+                                    <div class="col-md-8">
+                                       {{name}}
+                                    </div>
+                                </div>    
+                            </mat-list>
+                            <mat-list>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        Matric No
+                                    </div>
+                                    <div class="col-md-8">
+                                        {{matric_no}}
+                                    </div>
+                                </div>
+                            </mat-list>
+                            <mat-list>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                       Gender
+                                    </div>
+                                    <div class="col-md-8">
+                                        {{gender}}
+                                    </div>
+                                </div>
+                            </mat-list>
+                            <mat-list>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                       Mobile
+                                    </div>
+                                    <div class="col-md-8">
+                                        {{mobile}}
+                                    </div>
+                                </div>
+                            </mat-list>
+                            <mat-list>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                       Email
+                                    </div>
+                                    <div class="col-md-8">
+                                        {{email}}
+                                    </div>
+                                </div>
+                            </mat-list>
+                            <mat-list>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                       Class
+                                    </div>
+                                    <div class="col-md-8">
+                                        {{class}}
+                                    </div>
+                                </div>
+                            </mat-list>
+                            <mat-list>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                       Ref Contact
+                                    </div>
+                                    <div class="col-md-8">
+                                        {{ref}}
+                                    </div>
+                                </div>
+                            </mat-list>
+                            <mat-list>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                      Status
+                                    </div>
+                                    <div class="col-md-8">
+                                       {{status}}
+                                    </div>
+                                </div>
+                            </mat-list>
+                        </div>
+                    </div>
+                </mat-drawer>
+              </mat-drawer-container>
+        </div>
+      </div>
+      <!-- SHOW ON MED AND SMALL DEVICES HIDE ON LARGE -->
+      <div  fxShow="true" fxHide.gt-sm="true" >
+          <h5>ABOUT STARTING MOBILE</h5>
+      </div>
+      

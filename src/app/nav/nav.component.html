@@ -1,0 +1,43 @@
+
+<mat-sidenav-container class="example-container">
+  <mat-sidenav-content>
+    <!-- <p><mat-checkbox [(ngModel)]="opened">sidenav.opened</mat-checkbox></p> -->
+    <mat-toolbar mat-sidenav-container color="primary">
+      <i fxShow="true" fxHide.gt-sm="true" mat-button (click)="sidenav.toggle()" class="material-icons">menu</i>
+      <span>Edozier</span>
+            <!-- HIDE ON MED AND SMALL DEVICES SHOW ON LARGE -->
+            <li  fxShow="true" fxHide.lt-md="true" class="nav-item" *ngFor="let nav of navigation" mat-button >
+              <a class="nav-link {{nav.icon}}" (click)="set(nav.id)" mat-button title="{{nav.name}}"></a>
+            </li>
+
+   </mat-toolbar>
+  
+   <mat-toolbar-row class="secmat" fxShow="true" fxHide.lt-md="true" style="width: 100%">
+      <button mat-button *ngFor="let x of ans" class="matbtn" style="font-size: 12px" routerLink="{{x.link}}">
+         {{x.name}}
+      </button> 
+    </mat-toolbar-row>
+  
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+    <mat-sidenav #sidenav  [mode]="mode" style="padding-top: 100px">
+        <div style="color:red" class="text-center">
+          <h4>EDOZZIER</h4>
+        </div>
+        <mat-accordion>
+            <mat-expansion-panel *ngFor="let nav of navigation">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                    {{nav.name}}
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <mat-list>
+                <mat-list-item *ngFor="let x of nav.sub" routerLink="{{x.link}}" (click)="sidenav.close()">
+                    {{x.name}}
+                </mat-list-item>
+              </mat-list>
+            </mat-expansion-panel>
+          
+          </mat-accordion>
+    </mat-sidenav>
+</mat-sidenav-container>
