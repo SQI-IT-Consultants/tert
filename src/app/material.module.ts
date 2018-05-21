@@ -12,7 +12,11 @@ import {MatToolbarModule,
                       MatFormFieldModule,
                       MatInputModule,
                       MatTabsModule,
-                      MatCardModule} from '@angular/material';
+                      MatCardModule,
+                      MatStepperModule,
+                      MatSelectModule,
+                      MatDatepickerModule,
+                      MatNativeDateModule} from '@angular/material';
 
 @NgModule({
   imports: [MatToolbarModule,
@@ -25,7 +29,11 @@ import {MatToolbarModule,
                         MatFormFieldModule,
                         MatInputModule,
                         MatTabsModule,
-                        MatCardModule
+                        MatCardModule,
+                        MatStepperModule,
+                        MatSelectModule,
+                        MatDatepickerModule,
+                        MatNativeDateModule
                           ],
 
   exports: [MatToolbarModule,
@@ -38,7 +46,11 @@ import {MatToolbarModule,
                                       MatFormFieldModule,
                                       MatInputModule,
                                       MatTabsModule,
-                                      MatCardModule
+                                      MatCardModule,
+                                      MatStepperModule,
+                                      MatSelectModule,
+                                      MatDatepickerModule,
+                                      MatNativeDateModule
                                       ]
 })
 export class Material { }

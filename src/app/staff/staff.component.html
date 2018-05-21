@@ -5,9 +5,9 @@
                     <mat-drawer #drawer class="example-sidenav aSide" mode="side" opened="true" style="background-color:#E5DDD5;max-width: 15%;">
                         <app-stafflist></app-stafflist>
                     </mat-drawer>
-                    <div style="background-color: #cccccc">
-                          <i (click)="drawer.toggle()" class="material-icons btn-md" style="font-size: 30px;cursor: pointer;padding-left: 10px">menu</i>
-                    </div> 
+                    <div>
+                         <i (click)="drawer.toggle()" class="material-icons btn-md" style="font-size: 10px;cursor: pointer;padding-left: 10px"><<=</i>
+                      </div>
                       <ng-template #elseBlock>
                           <mat-drawer #drawer class="example-sidenav" mode="side" opened="true" position="end"
                                       style="background-color:#E5DDD5;max-width: 15%;">

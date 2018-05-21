@@ -166,6 +166,18 @@ export class StudlistComponent implements OnInit {
       "status":"active",
       "gender":"Male",
       "ref":"38480380843"
+    },
+    {
+      "id":"12",
+      "name":"Alabi Wasui",
+      "matric_no":"143049",
+      "email":"labi3@gmail.com",
+      "mobile":"081211238",
+      "pic":"assets/g.jpg",
+      "class":"300l",
+      "status":"active",
+      "gender":"Male",
+      "ref":"38480380843"
     }
 
 ]

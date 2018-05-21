@@ -34,8 +34,8 @@ export class NavComponent implements OnInit {
                                 {"id":"4","name":"SMS usage Report","link":"/mail/smsReport"}
                               ]},
                         {"id":"3","name":"Student",icon:"fa fa-user", 
-                              sub:[{"id":"0","name":"Student Default","link":"/student/studentDefaultmail/smsStudent"},
-                                    {"id":"1", "name":"New Student","link":"/student/studentNew"},
+                              sub:[{"id":"0", "name":"Student Default", "link":"studentDefault"},
+                                    {"id":"1", "name":"New Student","link":"studentNew"},
                                     {"id":"2", "name":"Student List","link":"student/studentList"},
                                     {"id":"3", "name":"Archive List","link":"/student/archiveList"},
                                     {"id":"4", "name":"Alumni List","link":"/student/alumniList"},
@@ -43,7 +43,7 @@ export class NavComponent implements OnInit {
                                   ]},
                         {"id":"4","name":"Staff Detail",icon:"fa fa-user",
                           sub:[
-                                {"id":"0","name":"Staff Default","link":"/staff/staffDefault"},
+                                {"id":"0","name":"Staff Default","link":"staffDefault"},
                                 {"id":"1", "name":"New Staff","link":"/staff/staffNew"},
                                 {"id":"2", "name":"Staff List","link":"/staff/staffList"},
                                 {"id":"3", "name":"Archive List","link":"/staff/archiveList"},
@@ -144,8 +144,8 @@ export class NavComponent implements OnInit {
                         },
                         {
                           "name":"Student",
-                          "id":"3", sub:[{"id":"0","name":"Student Default","link":"/student/studentDefaultmail/smsStudent"},
-                                    {"id":"1", "name":"New Student","link":"/student/studentNew"},
+                          "id":"3", sub:[{"id":"0","name":"Student Default","link":"studentDefault"},
+                                    {"id":"1", "name":"New Student","link":"studentNew"},
                                     {"id":"2", "name":"Student List","link":"student/studentList"},
                                     {"id":"3", "name":"Archive List","link":"/student/archiveList"},
                                     {"id":"4", "name":"Alumni List","link":"/student/alumniList"},
@@ -153,7 +153,7 @@ export class NavComponent implements OnInit {
                         },
                         {
                           "name":"Staff Detail",
-                          "id":"4", sub:[{"id":"0","name":"Staff Default","link":"/staff/staffDefault"},
+                          "id":"4", sub:[{"id":"0","name":"Staff Default","link":"staffDefault"},
                                     {"id":"1", "name":"New Staff","link":"/staff/staffNew"},
                                     {"id":"2", "name":"Staff List","link":"/staff/staffList"},
                                     {"id":"3", "name":"Archive List","link":"/staff/archiveList"},

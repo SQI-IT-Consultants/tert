@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StaffService } from '../staff.service';
 import { Router, ActivatedRoute} from '@angular/router';
+import { Pipe, PipeTransform } from '@angular/core';
 @Component({
   selector: 'app-stafflist',
   templateUrl: './stafflist.component.html',
@@ -8,6 +9,7 @@ import { Router, ActivatedRoute} from '@angular/router';
 })
 export class StafflistComponent implements OnInit {
   private staff;
+  search: string;
   constructor(private data:StaffService, private router:Router) { }
   message;
   ngOnInit() {
@@ -21,6 +23,14 @@ export class StafflistComponent implements OnInit {
   {
     this.router.navigate(['/staff',x.id]);
   }
+  characters=[
+    'Finn the human',
+    'Jake the dog',
+    'Princess bubblegum',
+    'Lumpy Space Princess',
+    'Beemo1',
+    'Beemo2'
+  ];
   public details = [
     {
       "id":"0",

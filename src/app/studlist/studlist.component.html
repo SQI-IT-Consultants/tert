@@ -1,12 +1,11 @@
-    
-    <div fxShow="true" fxHide.lt-md="true" >
+ <div fxShow="true" fxHide.lt-md="true" >
         <div>
             <form class="pad">    
-                <div class="row">
+                <div class="row" style="padding-bottom: 30px">
                     <div class="col-md-12 hold col-xs-12">
-                          <input type="text" class="form-control" placeholder="Search Here">
+                          <input type="text" class="form-control" placeholder="Search Here" [(ngModel)]="searchName" name="StudentName">
                       </div>
-                    <div class="col-md-12 det" *ngFor="let det of details" (click)="setProfile(det)">
+                    <div class="col-md-12 det" *ngFor="let det of details | filter : searchName" (click)="setProfile(det)">
                         <div class="row">
                             <div class="col-md-2">
                                 <img src="{{det.pic}}">
@@ -26,11 +25,11 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-12 col-md-12 mt-2">
-                            <input type="text" class="form-control" placeholder="Search Here">
+                            <input type="text" class="form-control" placeholder="Search Here" [(ngModel)]="searchName" name="StudentName">
                         </div>
                     </div>
                     <div class="mt-3">
-                            <div class="col-md-12 smhold" *ngFor="let det of details" (click)="studrec(det);setProfile(det)">
+                            <div class="col-md-12 smhold" *ngFor="let det of details | filter : searchName" (click)="studrec(det);setProfile(det)">
                                     <div class="row">
                                             <div class="col-xs-4 offset-1">
                                                 <img src="{{det.pic}}" class="rounded-circle img-fluid" style="width:50px;height: 50px">

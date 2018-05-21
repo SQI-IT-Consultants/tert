@@ -16,6 +16,14 @@ import { StaffComponent } from './staff/staff.component';
 import { StafflistComponent } from './stafflist/stafflist.component';
 import { StaffprofComponent } from './staffprof/staffprof.component';
 import { MobileStaffProfileComponent } from './mobile-staff-profile/mobile-staff-profile.component';
+import{ FiltercheckComponent} from './filtercheck/filtercheck.component'
+import { FormsModule } from '@angular/forms';
+import { FilterPipe} from './filter.pipe';
+import { StudentDefaultComponent } from './student-default/student-default.component';
+import { StaffDefaultComponent } from './staff-default/staff-default.component';
+import { StudentNewComponent } from './student-new/student-new.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CovalentFileModule } from '@covalent/core/file';
 
 @NgModule({
   
@@ -30,7 +38,12 @@ import { MobileStaffProfileComponent } from './mobile-staff-profile/mobile-staff
     StaffComponent,
     StafflistComponent,
     StaffprofComponent,
-    MobileStaffProfileComponent
+    FiltercheckComponent,
+    MobileStaffProfileComponent,
+    FilterPipe,
+    StudentDefaultComponent,
+    StaffDefaultComponent,
+    StudentNewComponent,
   ],
   imports: [
     
@@ -39,6 +52,8 @@ import { MobileStaffProfileComponent } from './mobile-staff-profile/mobile-staff
     Material,
     FlexLayoutModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
  
   ],
   providers: [],
