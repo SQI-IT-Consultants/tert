@@ -7,7 +7,9 @@ import { MobileStaffProfileComponent } from './mobile-staff-profile/mobile-staff
 import { StudlistComponent} from './studlist/studlist.component';
 import { StudentDefaultComponent } from './student-default/student-default.component';
 import { StaffDefaultComponent } from './staff-default/staff-default.component';
-import { StudentNewComponent } from './student-new/student-new.component'
+import { StudentNewComponent } from './student-new/student-new.component';
+import { ExamListComponent} from './exam-list/exam-list.component';
+import { ExamSetUpComponent } from './exam-set-up/exam-set-up.component'
 const routes: Routes = [
     {path: 'student/studentList', component:StudentComponent},
     {path: 'staff/staffList', component:StaffComponent},
@@ -15,7 +17,9 @@ const routes: Routes = [
     {path: 'staff/:id', component: MobileStaffProfileComponent},
     {path: 'studentDefault', component:StudentDefaultComponent},
     {path: 'staffDefault', component:StaffDefaultComponent},
-    {path: 'studentNew', component: StudentNewComponent}
+    {path: 'studentNew', component: StudentNewComponent},
+    {path: 'exam', component: ExamListComponent},
+    {path: 'examSetUp', component: ExamSetUpComponent}
 ];
 @NgModule({
   

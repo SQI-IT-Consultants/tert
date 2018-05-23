@@ -130,9 +130,9 @@ export class NavComponent implements OnInit {
                         },
                         {
                           "name":"Exam Setup",
-                          "id":"1", sub:[{"id":"0","name":"ExamSetUp","link":"/exam/examSetUp"},
-                                    {"id":"1","name":"Section SetUp","link":"/exam/SectionSetUp"},
-                                    {"id":"2","name":"examSignIn","link":"/exam/examSignIn"}]
+                          "id":"1", sub:[{"id":"0","name":"ExamSetUp","link":"examSetUp"},
+                                    {"id":"1","name":"Section SetUp","link":"SectionSetUp"},
+                                    {"id":"2","name":"examSignIn","link":"examSignIn"}]
                         },
                         {
                           "name":"Mail",

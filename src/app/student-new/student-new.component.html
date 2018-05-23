@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container-fluid">
     <div class="row text-center">
-      <div class="col-md-12 col-xs-12 ">
+      <div class="col-md-12 col-xs-12 mt-4">
         <h5>REGISTER NEW STUDENT</h5>
       </div>
     </div>
@@ -12,11 +12,15 @@
                   <div class="col-md-12">
                     <h5>ADMISSION DETAILS</h5>
                   </div>
+                  <div class="col-md-4">
+                      
+                    <button mat-raised-button (click)="openInput()">ADD PASSPORT</button>
+                    <img src="{{image}}" class="img-fluid" alt="Passport is required" style="margin-left:5px">
+                      <input id="fileInput" class="hide-it" type="file" accept="img/*" (change)="fileChange($event.target.files)" formControlName="passport" required>
+                  </div>
                   <mat-form-field class="col-md-4">
-                      <input matInput placeholder="Passport" formControlName="passport" required>
-                  </mat-form-field>
-                  <mat-form-field class="col-md-4">
-                      <input matInput [matDatepicker]="picker1" placeholder="Admission Date" formControlName="admissionDate" required>
+                      <input matInput [matDatepicker]="picker1" placeholder="Admission Date" formControlName="admissionDate"
+                      [(ngModel)]="myDate"  required>
                       <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
                       <mat-datepicker #picker1></mat-datepicker>
                   </mat-form-field>
@@ -26,26 +30,26 @@
             </div>
             <div class="row">
                 <mat-form-field class="col-md-4">
-                    <mat-select [(value)]="selected" placeholder="Department | Class" formControlName="deptClass" required>
+                    <mat-select [(value)]="dept" placeholder="Department | Class" formControlName="deptClass" required>
                       <mat-option>None</mat-option>
-                      <mat-option value="option1">option 1</mat-option>
-                      <mat-option value="option2">Option 2</mat-option>
-                      <mat-option value="option3">Option 3</mat-option>
+                      <mat-option value="dept1">CSE</mat-option>
+                      <mat-option value="dept2">EEE</mat-option>
+                      <mat-option value="dept3">AGE</mat-option>
                     </mat-select>
                   </mat-form-field>
 
                    <mat-form-field class="col-md-4">
-                      <mat-select [(value)]="selected" placeholder="Student Status" formControlName="status" required>
+                      <mat-select [(value)]="status" placeholder="Student Status" formControlName="status" required>
                           <mat-option>None</mat-option>
-                          <mat-option value="option1">option 1</mat-option>
-                          <mat-option value="option2">Option 2</mat-option>
-                          <mat-option value="option3">Option 3</mat-option>
+                          <mat-option value="Active">Active</mat-option>
+                          <mat-option value="NonActive">Non Active</mat-option>
+                          <mat-option value="Suspended">Suspended</mat-option>
                         </mat-select>
                    </mat-form-field>
                 
                 
                    <mat-form-field class="col-md-4">
-                       <input matInput placeholder="Password" formControlName="password" required>
+                       <input matInput placeholder="Password" formControlName="password" type="password" required>
                    </mat-form-field>
              
              </div>
@@ -82,18 +86,25 @@
                
               </div>
               <div class="row">
-                
-                      <mat-form-field class="col-md-4">
-                          <input matInput placeholder="Country" formControlName="country" required>
-                      </mat-form-field>
+                    <mat-form-field class="col-md-4">
+                        <mat-select placeholder="Country" formControlName="country"
+                                             required (selectionChange)="check($event.value)">   
+                            <mat-option  *ngFor="let x of countries" value="{{x.CountryName}}">{{x.CountryName}}</mat-option>
+                          </mat-select>
+                    </mat-form-field>
+                  
                   
                       <mat-form-field class="col-md-4">
-                          <input matInput placeholder="State" formControlName="state" required>
+                          <mat-select  placeholder="State" formControlName="state" required (selectionChange)="check1($event.value)">   
+                            <mat-option   *ngFor="let a of entStates" value="{{a.state}}"> {{a.state}}</mat-option>
+                          </mat-select>
                       </mat-form-field>
                 
                       <mat-form-field class="col-md-4">
-                          <input matInput placeholder="City" formControlName="city" required>
-                      </mat-form-field>
+                        <mat-select  placeholder="State" formControlName="state" required>   
+                          <mat-option   *ngFor="let a of ok" value="{{a}}"> {{a}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
                 
               </div>
               <div class="row">
@@ -117,33 +128,28 @@
                   </div>
                     <div class="row"> 
                       <mat-form-field class="col-md-4">
-                          <input matInput placeholder="Email" formControlName="email" required>
+                          <input matInput placeholder="Email" formControlName="email" type="email" required>
+                      </mat-form-field>
+                      <mat-form-field class="col-md-4">
+                          <input matInput placeholder="Phone 1" formControlName="phone1" required type="tel">
                       </mat-form-field>
 
                       <mat-form-field class="col-md-4">
-                          <input matInput placeholder="Phone 1" formControlName="phone1" required>
-                      </mat-form-field>
-
-                      <mat-form-field class="col-md-4">
-                          <input matInput placeholder="Phone 2" formControlName="phone2" required>
+                          <input matInput placeholder="Phone 2" formControlName="phone2" type="tel">
                       </mat-form-field>
                     </div>
                     <div class="row"> 
                       
                         <mat-form-field class="col-md-4">
-                          <mat-select [(value)]="selected" placeholder="Marital Status" formControlName="marital" required>
-                              <mat-option value="option2">Single</mat-option>
-                              <mat-option value="option2">Married</mat-option>
-                              <mat-option value="option3">Divorced</mat-option>
-                          </mat-select>
+                            <input matInput placeholder="Marital Status" formControlName="marital">
                         </mat-form-field>
                         <mat-form-field class="col-md-4">
                             <mat-select [(value)]="selected" placeholder="Denomination" formControlName="denomination" required>
-                                <mat-option value="option2">Baptist</mat-option>
+                                <mat-option value="baptist">Baptist</mat-option>
                             </mat-select>
                         </mat-form-field>
                         <mat-form-field class="col-md-4">
-                            <input matInput [matDatepicker]="picker2" placeholder="Date of Birth" formControlName="dob">
+                            <input matInput [matDatepicker]="picker2" placeholder="Date of Birth" formControlName="dob" [(ngModel)]="myDate" required>
                             <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
                             <mat-datepicker #picker2></mat-datepicker>
                         </mat-form-field>
@@ -163,18 +169,13 @@
                     </div>
                         <mat-form-field class="col-md-3">
                             <input matInput placeholder="Full Name" formControlName="r0fName" required>
-                        </mat-form-field>
-        
+                        </mat-form-field>               
                         <mat-form-field class="col-md-2">
-                            <input matInput placeholder="Email" formControlName="r0fEmail" required>
-                        </mat-form-field>
-                   
-                        <mat-form-field class="col-md-2">
-                            <input matInput placeholder="Phone 1" formControlName="r0fPhone1" required>
+                            <input matInput placeholder="Phone 1" formControlName="r0fPhone1" required type="tel">
                         </mat-form-field>
                    
                         <mat-form-field class="col-md-2">
-                            <input matInput placeholder="Phone 2" formControlName="r0fPhone2" required>
+                            <input matInput placeholder="Phone 2" formControlName="r0fPhone2" type="tel">
                         </mat-form-field>
                         <mat-form-field class="col-md-2">
                             <input matInput placeholder="Relationship" formControlName="r0fRelation1" required>
@@ -200,27 +201,22 @@
                             <h5>REFEREE'S/GUARDIAN DETAILS 2</h5>
                           </div>
                           <mat-form-field class="col-md-3">
-                              <input matInput placeholder="Full Name" formControlName="r1fName" required>
+                              <input matInput placeholder="Full Name" formControlName="r1fName">
                           </mat-form-field>
-          
                           <mat-form-field class="col-md-2">
-                              <input matInput placeholder="Email" formControlName="r1fEmail" required>
-                          </mat-form-field>
-                     
-                          <mat-form-field class="col-md-2">
-                              <input matInput placeholder="Phone 1" formControlName="r1fPhone1" required>
+                              <input matInput placeholder="Phone 1" formControlName="r1fPhone1" type="tel">
                           </mat-form-field>
                      
                           <mat-form-field class="col-md-2">
-                              <input matInput placeholder="Phone 2" formControlName="r1fPhone2" required>
+                              <input matInput placeholder="Phone 2" formControlName="r1fPhone2" type="tel"> 
                           </mat-form-field>
                           <mat-form-field class="col-md-2">
-                              <input matInput placeholder="Relationship" formControlName="r1fRelation1" required>
+                              <input matInput placeholder="Relationship" formControlName="r1fRelation1">
                           </mat-form-field>
                     </div>
                     <div class="row"> 
                             <mat-form-field class="col-md-12">
-                                <textarea matInput placeholder="Address" formControlName="r1fAddress" required></textarea>
+                                <textarea matInput placeholder="Address" formControlName="r1fAddress"></textarea>
                             </mat-form-field>
                     </div>
                   
@@ -230,6 +226,15 @@
                     </div>
                   </form>
                 </mat-step>
+                <mat-step>
+                    <ng-template matStepLabel>Done</ng-template>
+                    You are done!!!
+                    <div>
+                      <button mat-button matStepperPrevious>Back</button>
+                      <button mat-button (click)="stepper.reset()">Reset</button>
+                    </div>
+                </mat-step>
+               
       </mat-horizontal-stepper>
       
       

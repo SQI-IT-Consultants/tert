@@ -23,7 +23,12 @@ import { StudentDefaultComponent } from './student-default/student-default.compo
 import { StaffDefaultComponent } from './staff-default/staff-default.component';
 import { StudentNewComponent } from './student-new/student-new.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { CovalentFileModule } from '@covalent/core/file';
+import { StaffNewComponent } from './staff-new/staff-new.component';
+import { SelComponent } from './sel/sel.component';
+import { ExamComponent } from './exam/exam.component';
+import { ExamService } from './service/exam.service';
+import { ExamListComponent } from './exam-list/exam-list.component';
+import { ExamSetUpComponent } from './exam-set-up/exam-set-up.component';
 
 @NgModule({
   
@@ -44,6 +49,11 @@ import { CovalentFileModule } from '@covalent/core/file';
     StudentDefaultComponent,
     StaffDefaultComponent,
     StudentNewComponent,
+    StaffNewComponent,
+    SelComponent,
+    ExamComponent,
+    ExamListComponent,
+    ExamSetUpComponent
   ],
   imports: [
     
@@ -56,7 +66,8 @@ import { CovalentFileModule } from '@covalent/core/file';
     ReactiveFormsModule
  
   ],
-  providers: [],
+  providers: [ExamService],
+  entryComponents:[ExamComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

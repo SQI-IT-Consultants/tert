@@ -1,0 +1,49 @@
+<mat-card>
+   
+ 
+  <mat-card-content>
+      <mat-toolbar color="primary">
+          Exam SetUp <span class="spacer"></span><mat-icon (click)="onNoClick()" class="cancel">cancel</mat-icon>
+      </mat-toolbar> 
+      <div class="container-fluid">
+          <form [formGroup]="_examForm" (submit)="onSubmit()">
+            <div class="form-group">
+                <div class="row">
+                  <div class="col-md-6">
+                    <label>Examination</label>
+                    <input type="text" class="form-control" formControlName="examName"/>
+                  </div>
+                  <div class="col-md-6">
+                      <label>Pass Mark: </label>
+                      <input  class="form-control" formControlName="passMark" />
+                  </div>
+                  <div class="col-md-6">
+                      <label>Fee</label>
+                      <input class="form-control" formControlName="fee" />
+                  </div>
+                  <div class="col-md-6">
+                      <label>Retake Fee</label>
+                      <input type="text" class="form-control" formControlName="retakeFee"/>
+                    </div>
+                </div>
+                <div class="row">
+                   
+                    <div class="col-md-6">
+                        <label>Col: </label>
+                        <input  class="form-control" formControlName="col" />
+                    </div>
+                    <div class="col-md-6">
+                        <label>Instruction: </label>
+                        <input class="form-control" formControlName="instruction" />
+                    </div>
+                  </div>
+                  <div class="row mt-2">
+                      <div class="col-md-12">
+                        <button type="submit" class="btn btn-sm" mat-button color="primary" mat-raised-button >Save</button>
+                      </div>
+                  </div>
+            </div>
+        </form>
+      </div>
+  </mat-card-content>
+</mat-card>

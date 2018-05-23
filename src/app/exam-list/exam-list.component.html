@@ -1,0 +1,38 @@
+<mat-card>
+  <mat-card-content>
+      <div class="container-fluid">
+         <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                  <th>No</th>
+                  <th>Exam Name</th>
+                  <th>Pass Mark</th>
+                  <th>Fee</th>
+                  <th>Retake Fee</th>
+                  <th>Col</th>
+                  <th>Instructions</th>
+                  <th>Option</th>
+                </thead>
+                <tbody>
+                  <tr *ngFor=" let exam of ExamList">
+                     <td>{{exam.id}}</td>
+                     <td>{{exam.examName}}</td>
+                     <td>{{exam.passMark}}</td>
+                     <td>{{exam.fee}}</td>
+                     <td>{{exam.retakeFee}}</td>
+                     <td>{{exam.col}}</td>
+                     <td>{{exam.instruction}}</td>
+                     <td>
+                       <button (click)="editExam(exam.id)"  mat-button class="btn btn-info btn-sm"><mat-icon>edit</mat-icon>Edit</button>
+                       <button (click)="deleteExam(exam.id)" mat-button class="btn btn-danger btn-sm">
+                         <mat-icon>delete</mat-icon>Delete
+                       </button>
+                     </td>
+                    </tr>
+                </tbody>
+            </table>
+         </div>
+          <button (click)="addExam()" color="primary" mat-button mat-raised-button class="btn btn-md">add</button>
+        </div>
+  </mat-card-content>
+</mat-card>
