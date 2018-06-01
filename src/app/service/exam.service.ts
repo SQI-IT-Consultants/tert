@@ -20,6 +20,10 @@ export class ExamService {
   { 
       const exam = this._examList.findIndex(c => c.id === id);
       this._examList.splice(exam,1);
+      for(var x=0;x<this._examList.length;x++)
+      {
+        this._examList[x].id = x+1;
+      }
   }
   removeExam(id:number)
   {

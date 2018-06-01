@@ -1,245 +1,254 @@
-<div class="container-fluid">
-    <div class="row text-center">
-      <div class="col-md-12 col-xs-12 mt-4">
-        <h5>REGISTER NEW STUDENT</h5>
-      </div>
-    </div>
-   <mat-horizontal-stepper [linear]="isLinear" #stepper>
-        <mat-step [stepControl]="admissionFormGroup">
-          <form [formGroup]="admissionFormGroup">
-            <ng-template matStepLabel></ng-template>
-            <div class="row">
-                  <div class="col-md-12">
-                    <h5>ADMISSION DETAILS</h5>
-                  </div>
-                  <div class="col-md-4">
-                      
-                    <button mat-raised-button (click)="openInput()">ADD PASSPORT</button>
-                    <img src="{{image}}" class="img-fluid" alt="Passport is required" style="margin-left:5px">
-                      <input id="fileInput" class="hide-it" type="file" accept="img/*" (change)="fileChange($event.target.files)" formControlName="passport" required>
-                  </div>
-                  <mat-form-field class="col-md-4">
-                      <input matInput [matDatepicker]="picker1" placeholder="Admission Date" formControlName="admissionDate"
-                      [(ngModel)]="myDate"  required>
-                      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-                      <mat-datepicker #picker1></mat-datepicker>
-                  </mat-form-field>
-                  <mat-form-field class="col-md-4">
-                      <input matInput placeholder="Matric No" formControlName="matricNo" required>
-                  </mat-form-field>     
+<mat-card class="container-fluid">
+    <mat-card-content>
+        <div class="container-fluid">
+            <div class="row text-center">
+              <div class="col-md-12 col-xs-12">
+                <h5>REGISTER NEW STUDENT</h5>
+              </div>
             </div>
-            <div class="row">
-                <mat-form-field class="col-md-4">
-                    <mat-select [(value)]="dept" placeholder="Department | Class" formControlName="deptClass" required>
-                      <mat-option>None</mat-option>
-                      <mat-option value="dept1">CSE</mat-option>
-                      <mat-option value="dept2">EEE</mat-option>
-                      <mat-option value="dept3">AGE</mat-option>
-                    </mat-select>
-                  </mat-form-field>
-
-                   <mat-form-field class="col-md-4">
-                      <mat-select [(value)]="status" placeholder="Student Status" formControlName="status" required>
-                          <mat-option>None</mat-option>
-                          <mat-option value="Active">Active</mat-option>
-                          <mat-option value="NonActive">Non Active</mat-option>
-                          <mat-option value="Suspended">Suspended</mat-option>
-                        </mat-select>
-                   </mat-form-field>
-                
-                
-                   <mat-form-field class="col-md-4">
-                       <input matInput placeholder="Password" formControlName="password" type="password" required>
-                   </mat-form-field>
-             
-             </div>
-            
-            <div>
-              <button mat-button matStepperNext>Next</button>
-            </div>
-          </form>
-        </mat-step>
-     
-        <mat-step [stepControl]="personalFormGroup1">
-            <form [formGroup]="personalFormGroup1">
-              <ng-template matStepLabel></ng-template>
-              <div class="row">
-                  <div class="col-md-12">
-                      <h5>PERSONAL DETAILS 1</h5>
-                    </div>
-                    <mat-form-field class="col-md-4">
-                        <input matInput placeholder="Title" formControlName="title" required>
-                    </mat-form-field>
-              </div>
-              <div class="row">
-                    <mat-form-field class="col-md-4">
-                        <input matInput placeholder="Surname" formControlName="surname" required>
-                    </mat-form-field>
-               
-                    <mat-form-field class="col-md-4">
-                        <input matInput placeholder="Firstname" formControlName="firstname" required>
-                    </mat-form-field>
-               
-                    <mat-form-field class="col-md-4">
-                        <input matInput placeholder="Middlename" formControlName="middlename" required>
-                    </mat-form-field>
-               
-              </div>
-              <div class="row">
-                    <mat-form-field class="col-md-4">
-                        <mat-select placeholder="Country" formControlName="country"
-                                             required (selectionChange)="check($event.value)">   
-                            <mat-option  *ngFor="let x of countries" value="{{x.CountryName}}">{{x.CountryName}}</mat-option>
-                          </mat-select>
-                    </mat-form-field>
-                  
-                  
-                      <mat-form-field class="col-md-4">
-                          <mat-select  placeholder="State" formControlName="state" required (selectionChange)="check1($event.value)">   
-                            <mat-option   *ngFor="let a of entStates" value="{{a.state}}"> {{a.state}}</mat-option>
-                          </mat-select>
-                      </mat-form-field>
-                
-                      <mat-form-field class="col-md-4">
-                        <mat-select  placeholder="State" formControlName="state" required>   
-                          <mat-option   *ngFor="let a of ok" value="{{a}}"> {{a}}</mat-option>
-                        </mat-select>
-                    </mat-form-field>
-                
-              </div>
-              <div class="row">
-                <div class="col-md-12 col-xs-12">
-                    <mat-form-field class="example-full-width">
-                        <textarea matInput placeholder="Address"  formControlName="address"></textarea>
-                     </mat-form-field> 
-                </div>           
-              </div>
-              <div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button mat-button matStepperNext>Next</button>
-              </div>
-            </form>
-          </mat-step>
-          <mat-step [stepControl]="personalFormGroup2">
-              <form [formGroup]="personalFormGroup2">
-                <ng-template matStepLabel></ng-template>
-                <div class="col-md-12">
-                    <h5>PERSONAL DETAILS 2</h5>
-                  </div>
-                    <div class="row"> 
-                      <mat-form-field class="col-md-4">
-                          <input matInput placeholder="Email" formControlName="email" type="email" required>
-                      </mat-form-field>
-                      <mat-form-field class="col-md-4">
-                          <input matInput placeholder="Phone 1" formControlName="phone1" required type="tel">
-                      </mat-form-field>
-
-                      <mat-form-field class="col-md-4">
-                          <input matInput placeholder="Phone 2" formControlName="phone2" type="tel">
-                      </mat-form-field>
-                    </div>
-                    <div class="row"> 
-                      
-                        <mat-form-field class="col-md-4">
-                            <input matInput placeholder="Marital Status" formControlName="marital">
-                        </mat-form-field>
-                        <mat-form-field class="col-md-4">
-                            <mat-select [(value)]="selected" placeholder="Denomination" formControlName="denomination" required>
-                                <mat-option value="baptist">Baptist</mat-option>
-                            </mat-select>
-                        </mat-form-field>
-                        <mat-form-field class="col-md-4">
-                            <input matInput [matDatepicker]="picker2" placeholder="Date of Birth" formControlName="dob" [(ngModel)]="myDate" required>
-                            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-                            <mat-datepicker #picker2></mat-datepicker>
-                        </mat-form-field>
-                      </div>
-                <div>
-                  <button mat-button matStepperPrevious>Back</button>
-                  <button mat-button matStepperNext>Next</button>
-                </div>
-              </form>
-            </mat-step>
-            <mat-step [stepControl]="refFormGroup1">
-                <form [formGroup]="refFormGroup1">
-                  <ng-template matStepLabel></ng-template>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <h5>REFEREE'S/GUARDIAN DETAILS</h5>
-                    </div>
-                        <mat-form-field class="col-md-3">
-                            <input matInput placeholder="Full Name" formControlName="r0fName" required>
-                        </mat-form-field>               
-                        <mat-form-field class="col-md-2">
-                            <input matInput placeholder="Phone 1" formControlName="r0fPhone1" required type="tel">
-                        </mat-form-field>
-                   
-                        <mat-form-field class="col-md-2">
-                            <input matInput placeholder="Phone 2" formControlName="r0fPhone2" type="tel">
-                        </mat-form-field>
-                        <mat-form-field class="col-md-2">
-                            <input matInput placeholder="Relationship" formControlName="r0fRelation1" required>
-                        </mat-form-field>
-                  </div>
-                  <div class="row"> 
-                          <mat-form-field class="col-md-12">
-                              <textarea matInput placeholder="Address" formControlName="r0fAddress" required></textarea>
-                          </mat-form-field>
-                  </div>
-                
-                  <div>
-                    <button mat-button matStepperPrevious>Back</button>
-                    <button mat-button matStepperNext>Next</button>
-                  </div>
-                </form>
-              </mat-step>
-              <mat-step [stepControl]="refFormGroup2">
-                  <form [formGroup]="refFormGroup2">
+           <mat-horizontal-stepper [linear]="isLinear" #stepper>
+                <mat-step [stepControl]="admissionFormGroup">
+                  <form [formGroup]="admissionFormGroup">
                     <ng-template matStepLabel></ng-template>
                     <div class="row">
-                        <div class="col-md-12">
-                            <h5>REFEREE'S/GUARDIAN DETAILS 2</h5>
+                          <div class="col-md-12">
+                            <h5>ADMISSION DETAILS</h5>
                           </div>
-                          <mat-form-field class="col-md-3">
-                              <input matInput placeholder="Full Name" formControlName="r1fName">
+                          <div class="col-md-4">
+                              
+                            <button mat-raised-button (click)="openInput()">ADD PASSPORT</button>
+                            <img src="{{image}}" class="img-fluid" alt="Passport is required" style="margin-left:5px">
+                              <input id="fileInput" class="hide-it" type="file" accept="img/*" (change)="fileChange($event.target.files)" formControlName="passport" required>
+                          </div>
+                          <mat-form-field class="col-md-4">
+                              <input matInput [matDatepicker]="picker1" placeholder="Admission Date" formControlName="admissionDate"
+                              [(ngModel)]="myDate"  required>
+                              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                              <mat-datepicker #picker1></mat-datepicker>
                           </mat-form-field>
-                          <mat-form-field class="col-md-2">
-                              <input matInput placeholder="Phone 1" formControlName="r1fPhone1" type="tel">
+                          <mat-form-field class="col-md-4">
+                              <input matInput placeholder="Matric No" formControlName="matricNo" required>
+                          </mat-form-field>     
+                    </div>
+                    <div class="row">
+                        <mat-form-field class="col-md-4">
+                            <mat-select [(value)]="dept" placeholder="Department | Class" formControlName="deptClass" required>
+                              <mat-option>None</mat-option>
+                              <mat-option value="dept1">CSE</mat-option>
+                              <mat-option value="dept2">EEE</mat-option>
+                              <mat-option value="dept3">AGE</mat-option>
+                            </mat-select>
                           </mat-form-field>
+        
+                           <mat-form-field class="col-md-4">
+                              <mat-select [(value)]="status" placeholder="Student Status" formControlName="status" required>
+                                  <mat-option>None</mat-option>
+                                  <mat-option value="Active">Active</mat-option>
+                                  <mat-option value="NonActive">Non Active</mat-option>
+                                  <mat-option value="Suspended">Suspended</mat-option>
+                                </mat-select>
+                           </mat-form-field>
+                        
+                        
+                           <mat-form-field class="col-md-4">
+                               <input matInput placeholder="Password" formControlName="password" type="password" required>
+                           </mat-form-field>
                      
-                          <mat-form-field class="col-md-2">
-                              <input matInput placeholder="Phone 2" formControlName="r1fPhone2" type="tel"> 
-                          </mat-form-field>
-                          <mat-form-field class="col-md-2">
-                              <input matInput placeholder="Relationship" formControlName="r1fRelation1">
-                          </mat-form-field>
-                    </div>
-                    <div class="row"> 
-                            <mat-form-field class="col-md-12">
-                                <textarea matInput placeholder="Address" formControlName="r1fAddress"></textarea>
-                            </mat-form-field>
-                    </div>
-                  
+                     </div>
+                    
                     <div>
-                      <button mat-button matStepperPrevious>Back</button>
                       <button mat-button matStepperNext>Next</button>
                     </div>
                   </form>
                 </mat-step>
-                <mat-step>
-                    <ng-template matStepLabel>Done</ng-template>
-                    You are done!!!
-                    <div>
-                      <button mat-button matStepperPrevious>Back</button>
-                      <button mat-button (click)="stepper.reset()">Reset</button>
-                    </div>
-                </mat-step>
-               
-      </mat-horizontal-stepper>
-      
-      
-      <!-- Copyright 2018 Google Inc. All Rights Reserved.
-          Use of this source code is governed by an MIT-style license that
-          can be found in the LICENSE file at http://angular.io/license -->
-</div>
+             
+                <mat-step [stepControl]="personalFormGroup1">
+                    <form [formGroup]="personalFormGroup1">
+                      <ng-template matStepLabel></ng-template>
+                      <div class="row">
+                          <div class="col-md-12">
+                              <h5>PERSONAL DETAILS 1</h5>
+                            </div>
+                            <mat-form-field class="col-md-4">
+                                <input matInput placeholder="Title" formControlName="title" required>
+                            </mat-form-field>
+                      </div>
+                      <div class="row">
+                            <mat-form-field class="col-md-4">
+                                <input matInput placeholder="Surname" formControlName="surname" required>
+                            </mat-form-field>
+                       
+                            <mat-form-field class="col-md-4">
+                                <input matInput placeholder="Firstname" formControlName="firstname" required>
+                            </mat-form-field>
+                       
+                            <mat-form-field class="col-md-4">
+                                <input matInput placeholder="Middlename" formControlName="middlename" required>
+                            </mat-form-field>
+                       
+                      </div>
+                      <div class="row">
+                            <mat-form-field class="col-md-4">
+                                <mat-select placeholder="Country" formControlName="country"
+                                                     required (selectionChange)="check($event.value)">   
+                                    <mat-option  *ngFor="let x of countries" value="{{x.CountryName}}">{{x.CountryName}}</mat-option>
+                                  </mat-select>
+                            </mat-form-field>
+                            
+                            
+                          
+                          
+                              <mat-form-field class="col-md-4">
+                                  <mat-select  placeholder="State" formControlName="state" required (selectionChange)="check1($event.value)">   
+                                    <mat-option   *ngFor="let a of entStates" value="{{a.state}}"> {{a.state}}</mat-option>
+                                  </mat-select>
+                              </mat-form-field>
+                        
+                              <mat-form-field class="col-md-4">
+                                <mat-select  placeholder="State" formControlName="state" required>   
+                                  <mat-option   *ngFor="let a of ok" value="{{a}}"> {{a}}</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                            <mat-form-field class="example-full-width">
+                                <textarea matInput placeholder="Address"  formControlName="address"></textarea>
+                             </mat-form-field> 
+                        </div>           
+                      </div>
+                      <div>
+                        <button mat-button matStepperPrevious>Back</button>
+                        <button mat-button matStepperNext>Next</button>
+                      </div>
+                    </form>
+                  </mat-step>
+                  <mat-step [stepControl]="personalFormGroup2">
+                      <form [formGroup]="personalFormGroup2">
+                        <ng-template matStepLabel></ng-template>
+                        <div class="col-md-12">
+                            <h5>PERSONAL DETAILS 2</h5>
+                          </div>
+                            <div class="row"> 
+                              <mat-form-field class="col-md-4">
+                                  <input matInput placeholder="Email" formControlName="email" type="email" required>
+                              </mat-form-field>
+                              <mat-form-field class="col-md-4">
+                                  <input matInput placeholder="Phone 1" formControlName="phone1" required type="tel">
+                              </mat-form-field>
+        
+                              <mat-form-field class="col-md-4">
+                                  <input matInput placeholder="Phone 2" formControlName="phone2" type="tel">
+                              </mat-form-field>
+                            </div>
+                            <div class="row"> 
+                              
+                                <mat-form-field class="col-md-4">
+                                    <input matInput placeholder="Marital Status" formControlName="marital">
+                                </mat-form-field>
+                                <mat-form-field class="col-md-4">
+                                    <mat-select [(value)]="selected" placeholder="Denomination" formControlName="denomination" required>
+                                        <mat-option value="baptist">Baptist</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                                <mat-form-field class="col-md-4">
+                                    <input matInput [matDatepicker]="picker2" placeholder="Date of Birth" formControlName="dob" [(ngModel)]="myDate" required>
+                                    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker2></mat-datepicker>
+                                </mat-form-field>
+                              </div>
+                        <div>
+                          <button mat-button matStepperPrevious>Back</button>
+                          <button mat-button matStepperNext>Next</button>
+                        </div>
+                      </form>
+                    </mat-step>
+                    <mat-step [stepControl]="refFormGroup1">
+                        <form [formGroup]="refFormGroup1">
+                          <ng-template matStepLabel></ng-template>
+                          <div class="row">
+                            <div class="col-md-12">
+                              <h5>REFEREE'S/GUARDIAN DETAILS</h5>
+                            </div>
+                                <mat-form-field class="col-md-3">
+                                    <input matInput placeholder="Full Name" formControlName="r0fName" required>
+                                </mat-form-field>               
+                                <mat-form-field class="col-md-2">
+                                    <input matInput placeholder="Phone 1" formControlName="r0fPhone1" required type="tel">
+                                </mat-form-field>
+                           
+                                <mat-form-field class="col-md-2">
+                                    <input matInput placeholder="Phone 2" formControlName="r0fPhone2" type="tel">
+                                </mat-form-field>
+                                <mat-form-field class="col-md-2">
+                                    <input matInput placeholder="Relationship" formControlName="r0fRelation1" required>
+                                </mat-form-field>
+                          </div>
+                          <div class="row"> 
+                                  <mat-form-field class="col-md-12">
+                                      <textarea matInput placeholder="Address" formControlName="r0fAddress" required></textarea>
+                                  </mat-form-field>
+                          </div>
+                        
+                          <div>
+                            <button mat-button matStepperPrevious>Back</button>
+                            <button mat-button matStepperNext>Next</button>
+                          </div>
+                        </form>
+                      </mat-step>
+                      <mat-step [stepControl]="refFormGroup2">
+                          <form [formGroup]="refFormGroup2">
+                            <ng-template matStepLabel></ng-template>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h5>REFEREE'S/GUARDIAN DETAILS 2</h5>
+                                  </div>
+                                  <mat-form-field class="col-md-3">
+                                      <input matInput placeholder="Full Name" formControlName="r1fName">
+                                  </mat-form-field>
+                                  <mat-form-field class="col-md-2">
+                                      <input matInput placeholder="Phone 1" formControlName="r1fPhone1" type="tel">
+                                  </mat-form-field>
+                             
+                                  <mat-form-field class="col-md-2">
+                                      <input matInput placeholder="Phone 2" formControlName="r1fPhone2" type="tel"> 
+                                  </mat-form-field>
+                                  <mat-form-field class="col-md-2">
+                                      <input matInput placeholder="Relationship" formControlName="r1fRelation1">
+                                  </mat-form-field>
+                            </div>
+                            <div class="row"> 
+                                    <mat-form-field class="col-md-12">
+                                        <textarea matInput placeholder="Address" formControlName="r1fAddress"></textarea>
+                                    </mat-form-field>
+                            </div>
+                          
+                            <div>
+                              <button mat-button matStepperPrevious>Back</button>
+                              <button mat-button matStepperNext>Next</button>
+                            </div>
+                          </form>
+                        </mat-step>
+                        <mat-step>
+                            <ng-template matStepLabel>Done</ng-template>
+                            You are done!!!
+                            <div>
+                              <button mat-button matStepperPrevious>Back</button>
+                              <button mat-button (click)="stepper.reset()">Reset</button>
+                            </div>
+                        </mat-step>
+                       
+              </mat-horizontal-stepper>
+        </div>
+          
+    </mat-card-content>
+</mat-card>
   
+ 
+
+
+<!-- </div> -->
+<!-- </div> -->
+
+

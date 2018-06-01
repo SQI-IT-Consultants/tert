@@ -1,0 +1,51 @@
+ <!-- HIDE ON MED AND SMALL DEVICES SHOW ON LARGE --> 
+   
+           <mat-card-content fxShow="true" fxHide.lt-md="true" >
+                  <div class="container-fluid">
+                      <div class="row">
+                           
+                            <div class="col-lg-3" *ngFor="let x of content">
+                                    <mat-card class="card">
+                                            <div class="text-muted text-right mb-2">
+                                                <i class="fa fa-pencil fa-2x"></i>
+                                            </div>
+                                            <div class="h6 mb-0">
+                                               <span class="count"> {{x.numb}}</span>
+                                            </div>
+                                            <small>{{x.name}}</small>
+                                            <mat-progress-bar
+                                                class="example-margin"
+                                                [color]="color"
+                                                [mode]="mode"
+                                                value="{{x.value}}"
+                                                [bufferValue]="bufferValue">
+                                            </mat-progress-bar>
+                                    </mat-card>
+                            </div>
+                            
+                        </div>
+                  </div>
+            </mat-card-content>
+<!-- SHOW ON MED AND SMALL DEVICES HIDE ON LARGE -->
+    <mat-card-content class="cont-fluid"  fxShow="true" fxHide.gt-sm="true">
+        <div class="row justify-content-around">
+                <mat-card class="cl-6 card" *ngFor="let x of content">
+                        <div class="text-muted text-right mb-2">
+                            <i class="fa fa-pencil "></i>
+                        </div>
+                        <div class="h6 mb-1">
+                           {{x.numb}}
+                        </div>
+                        <small>{{x.name}}</small>
+                        <mat-progress-bar
+                            class="example-margin"
+                            [color]="color"
+                            [mode]="mode"
+                            value="{{x.value}}"
+                            [bufferValue]="bufferValue">
+                        </mat-progress-bar>
+                </mat-card>
+               
+        </div>
+    </mat-card-content>
+

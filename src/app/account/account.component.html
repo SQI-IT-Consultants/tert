@@ -1,0 +1,39 @@
+<mat-card>
+   
+ 
+    <mat-card-content>
+        <mat-toolbar color="primary">
+            Account Chart <span class="spacer"></span><mat-icon (click)="onNoClick()" class="cancel">cancel</mat-icon>
+        </mat-toolbar> 
+        <div class="container-fluid">
+            <form [formGroup]="_accountForm" (submit)="onSubmit()">
+              <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label>Account Number</label>
+                      <input type="text" class="form-control" formControlName="accountNo"/>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Account Title: </label>
+                        <input  class="form-control" formControlName="accountName" />
+                    </div>
+                    <div class="col-md-6">
+                        <label>Description</label>
+                        <input class="form-control" formControlName="description" />
+                    </div>
+                    <div class="col-md-6">
+                        <label>Account Type</label>
+                        <input type="text" class="form-control" formControlName="accountType"/>
+                      </div>
+                  </div>
+                  
+                    <div class="row mt-2">
+                        <div class="col-md-12">
+                          <button type="submit" class="btn btn-sm" mat-button color="primary" mat-raised-button >Save</button>
+                        </div>
+                    </div>
+              </div>
+          </form>
+        </div>
+    </mat-card-content>
+  </mat-card>

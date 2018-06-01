@@ -3,20 +3,22 @@
   <mat-sidenav-content>
     <!-- <p><mat-checkbox [(ngModel)]="opened">sidenav.opened</mat-checkbox></p> -->
     <mat-toolbar mat-sidenav-container color="primary" class="sticky-top">
-      <i fxShow="true" fxHide.gt-sm="true" mat-button (click)="sidenav.toggle()" class="material-icons">menu</i>
-      <span>EDOZZIER</span>
-            <!-- HIDE ON MED AND SMALL DEVICES SHOW ON LARGE -->
-            <li  fxShow="true" fxHide.lt-md="true" class="nav-item" *ngFor="let nav of navigation" mat-button >
-              <a class="nav-link {{nav.icon}}" (click)="set(nav.id)" mat-button title="{{nav.name}}"></a>
-            </li>
-
+       <mat-toolbar-row>
+          <i fxShow="true" fxHide.gt-sm="true" mat-button (click)="sidenav.toggle()" class="material-icons">menu</i>
+          <span>EDOZZIER</span>
+                <!-- HIDE ON MED AND SMALL DEVICES SHOW ON LARGE -->
+                <li  fxShow="true" fxHide.lt-md="true" class="nav-item" *ngFor="let nav of navigation" mat-button >
+                  <a class="nav-link {{nav.icon}}" (click)="set(nav.id)" mat-button title="{{nav.name}}"></a>
+                </li>
+       </mat-toolbar-row>
+       <mat-toolbar-row class="secmat" fxShow="true" fxHide.lt-md="true" >
+          <a mat-button *ngFor="let x of ans" class="matbtn" style="font-size: 12px" routerLink="{{x.link}}" routerLinkActive="active">
+             {{x.name}}
+          </a> 
+        </mat-toolbar-row>
    </mat-toolbar>
   
-   <mat-toolbar-row class="secmat" fxShow="true" fxHide.lt-md="true" style="width: 100%">
-      <button mat-button *ngFor="let x of ans" class="matbtn" style="font-size: 12px" routerLink="{{x.link}}">
-         {{x.name}}
-      </button> 
-    </mat-toolbar-row>
+   
   
     <router-outlet></router-outlet>
   </mat-sidenav-content>

@@ -1,0 +1,165 @@
+<mat-tab-group  #tabGroup  (selectedTabChange)="tabChanged($event)">
+  <mat-tab *ngFor="let x of record" label="{{x.course_title}}" > 
+    <div class="demo-tab-content"  >
+     
+          
+           <!-- HIDE ON MED AND SMALL DEVICES SHOW ON LARGE -->
+            <div fxShow="true" fxHide.lt-md="true" class="container-fluid">
+              <!-- <div *ngFor="let det of result">
+                {{det.firstname}}
+              </div> -->
+              <div class="row">
+                    <mat-card class="col-md-12">
+                      <div class="row mb-3 font-weight-bold" style="text-transform: uppercase;font-size: 15px">
+                          <div class="col-1">
+                              Passport
+                          </div>
+                          <div class="col-11">
+                              <div class="row">
+                                  <div class="col-2">
+                                      Matric No
+                                   </div>
+                                   <div class="col-2">
+                                       Fullname
+                                   </div>
+                                   <div class="col-1">
+                                      ca 40%
+                                   </div>
+                                   <div class="col-1">
+                                      Exam 60%
+                                   </div>
+                                   <div class="col-2 offset-1">
+                                        Total
+                                 </div>
+                                   <div class="col-1">
+                                      Letter Grade
+                                   </div>
+                                   <div class="col-1">
+                                      Point
+                                   </div>
+                                   <div class="col-1">
+                                      Remark
+                                   </div>
+                              </div>
+                          </div>
+                      </div>
+                      <mat-card-content *ngFor="let det of result" style="max-height: 50vhx">
+                        <div class="row"> 
+                          <div class="col-1" style="margin-top: 1px">
+                            <img src="{{det.pic}}" class="img-fluid rounded-circle img">
+                          </div>
+                          <div class="col-11">
+                              <div class="row mt-3">
+                                  <div class="col-2">
+                                     {{det.matric_no}}
+                                  </div>
+                                  <div class="col-2">
+                                      {{det.lastname}}  {{det.firstname}}
+                                  </div>
+                                  <mat-form-field class="col-1 setmat">
+                                    <mat-select  [(ngModel)]="det.ca"  name="ca"  (selectionChange)="checkCa($event)">
+                                      <mat-option [value]="det.ca">{{det.ca}}</mat-option>
+                                      <mat-option *ngFor="let x of arrCa" value="{{x}}">{{x}}</mat-option>   
+                                    </mat-select>  
+                                  </mat-form-field>
+                                  <mat-form-field class="col-1 setmat">
+                                    <mat-select  [(ngModel)]="det.exam"  name="exam" (selectionChange)="checkEx($event)">
+                                      <mat-option [value]="det.exam">{{det.exam}}</mat-option>
+                                      <mat-option *ngFor="let x of arrEx" value="{{x}}">{{x}}</mat-option>   
+                                    </mat-select>
+                                  </mat-form-field>
+                                  <div class="col-2 offset-1">
+                                    {{det.total}}
+                                 </div>
+                                  <div class="col-1">
+                                      {{det.grade}}
+                                   </div>
+                                   <div class="col-1">
+
+                                   </div>
+                                   <div class="col-1">
+                                      Good
+                                   </div>
+                              </div>
+                             
+                          </div>
+                        </div>
+                      </mat-card-content>
+                    </mat-card>
+                  </div>
+              </div>
+          
+         
+            <!-- SHOW ON MED AND SMALL DEVICES HIDE ON LARGE -->
+             <div  fxShow="true" fxHide.gt-sm="true" style="padding: 0px !important">
+                  <div class="row" style="padding: 0px !important">
+                      <div class="col-md-12" style="padding: 0px !important">
+                          <mat-card>
+                            <mat-card-content *ngFor="let det of result">
+                                <div class="row" style="padding: 0px">
+                                    <div class="col-2 mt-1" style="margin-left: 4px">
+                                        <img src="{{det.pic}}" class="rounded-circle im-fluid" />
+                                    </div>
+                                    <div class="col-9">
+                                       <div class="row">
+                                          <div class="col-12 font-weight-bold">
+                                              {{det.lastname}} {{det.firstname}}     
+                                          </div>
+                                          <div class="col-12">
+                                              <div class="row">
+                                                  <span class="col-3">{{det.matric_no}}</span> 
+                                                  <mat-form-field class="col-3" style="font-size: 10px">
+                                                    <mat-select placeholder="CA" [(ngModel)]="det.ca"  name="ca"  (selectionChange)="checkCa($event)">
+                                                      <mat-option [value]="det.ca">{{det.ca}}</mat-option>
+                                                      <mat-option *ngFor="let x of arrCa" value="{{x}}">{{x}}</mat-option>   
+                                                    </mat-select>  
+                                                  </mat-form-field>
+                                                  <mat-form-field class="col-3" style="font-size: 10px">
+                                                      <mat-select placeholder="Exam"  [(ngModel)]="det.exam"  name="ex"  (selectionChange)="checkEx($event)">
+                                                        <mat-option [value]="det.exam">{{det.ca}}</mat-option>
+                                                        <mat-option *ngFor="let x of arrEx" value="{{x}}">{{x}}</mat-option>   
+                                                      </mat-select>  
+                                                    </mat-form-field>
+                                                    <div class="col-3" style="font-size: 10px">
+                                                     {{det.total}} <span class="font-weight-bold">{{det.grade}}</span>
+                                                         
+                                                    </div>
+                                              </div>
+                                            </div> 
+                                             
+                                          </div>
+                                       </div>
+                                       
+                                       
+                                    </div>
+                                   
+                            </mat-card-content>
+                          </mat-card>
+                      </div>
+                  </div>
+             </div> 
+    </div>
+  </mat-tab>
+ 
+</mat-tab-group>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<li *ngFor="let det of result">
+  {{det.firstname}}
+</li> -->

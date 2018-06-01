@@ -1,0 +1,51 @@
+[
+    {       
+
+        "staff_name":"Bello Samuel",
+        "staff_id":1,
+        "coursesOffered":
+                        [{
+                            "co_id":1,
+                            "sub_id":0,
+                            "course_title":"CSE204",
+                           "course_sdesc":"A nice and cool detail of information for the coolest users",
+                           "course_fdesc":"A nice and cool detail of information for the coolest users"
+                         },
+                         {
+                            "co_id":2,
+                            "sub_id":0,
+                            "course_title":"CSE305",
+                           "course_sdesc":"A nice and cool detail of information for the coolest users",
+                           "course_fdesc":"A nice and cool detail of information for the coolest users"
+                         }
+                        ]
+    },
+    {
+        
+        "staff_name":"Aderinto Adeyemi",
+        "staff_id":2,
+        "coursesOffered":
+                        [{
+                            "co_id":1,
+                            "sub_id":1,
+                            "course_title":"MEE405",
+                           "course_sdesc":"A nice and cool detail of information for the coolest users",
+                           "course_fdesc":"A nice and cool detail of information for the coolest users"
+                         },
+                         {
+                             "co_id":2,
+                             "sub_id":1,
+                            "course_title":"MEE492",
+                           "course_sdesc":"A nice and cool detail of information for the coolest users",
+                           "course_fdesc":"A nice and cool detail of information for the coolest users"
+                         },
+                         {
+                             "co_id":3,
+                             "sub_id":1,
+                            "course_title":"MEE200",
+                           "course_sdesc":"A nice and cool detail of information for the coolest users",
+                           "course_fdesc":"A nice and cool detail of information for the coolest users"
+                         }
+                        ]
+    }
+]

@@ -9,7 +9,10 @@ import { StudentDefaultComponent } from './student-default/student-default.compo
 import { StaffDefaultComponent } from './staff-default/staff-default.component';
 import { StudentNewComponent } from './student-new/student-new.component';
 import { ExamListComponent} from './exam-list/exam-list.component';
-import { ExamSetUpComponent } from './exam-set-up/exam-set-up.component'
+import { ExamSetUpComponent } from './exam-set-up/exam-set-up.component';
+import { AccountChartComponent} from './account-chart/account-chart.component'
+import { AccountlistComponent } from './accountlist/accountlist.component';
+import { DashboardComponent } from './dashboard/dashboard.component'
 const routes: Routes = [
     {path: 'student/studentList', component:StudentComponent},
     {path: 'staff/staffList', component:StaffComponent},
@@ -18,8 +21,9 @@ const routes: Routes = [
     {path: 'studentDefault', component:StudentDefaultComponent},
     {path: 'staffDefault', component:StaffDefaultComponent},
     {path: 'studentNew', component: StudentNewComponent},
-    {path: 'exam', component: ExamListComponent},
-    {path: 'examSetUp', component: ExamSetUpComponent}
+    {path: 'examSetUp', component: ExamSetUpComponent},
+    {path: 'accountChart', component:AccountChartComponent},
+    {path: 'dashboard', component:DashboardComponent}
 ];
 @NgModule({
   

@@ -1,38 +1,92 @@
-<mat-card>
-  <mat-card-content>
-      <div class="container-fluid">
-         <div class="table-responsive">
-            <table class="table table-bordered">
-                <thead>
-                  <th>No</th>
-                  <th>Exam Name</th>
-                  <th>Pass Mark</th>
-                  <th>Fee</th>
-                  <th>Retake Fee</th>
-                  <th>Col</th>
-                  <th>Instructions</th>
-                  <th>Option</th>
-                </thead>
-                <tbody>
-                  <tr *ngFor=" let exam of ExamList">
-                     <td>{{exam.id}}</td>
-                     <td>{{exam.examName}}</td>
-                     <td>{{exam.passMark}}</td>
-                     <td>{{exam.fee}}</td>
-                     <td>{{exam.retakeFee}}</td>
-                     <td>{{exam.col}}</td>
-                     <td>{{exam.instruction}}</td>
-                     <td>
-                       <button (click)="editExam(exam.id)"  mat-button class="btn btn-info btn-sm"><mat-icon>edit</mat-icon>Edit</button>
-                       <button (click)="deleteExam(exam.id)" mat-button class="btn btn-danger btn-sm">
-                         <mat-icon>delete</mat-icon>Delete
-                       </button>
-                     </td>
-                    </tr>
-                </tbody>
-            </table>
-         </div>
-          <button (click)="addExam()" color="primary" mat-button mat-raised-button class="btn btn-md">add</button>
-        </div>
-  </mat-card-content>
-</mat-card>
+<div fxShow="true" fxHide.lt-md="true" >
+    <mat-card>
+        <mat-card-content>
+          <form>
+            <div class="container-fluid">
+               <div class="table-responsive">
+                  <table class="table table-bordered">
+                  
+                      <thead>
+                            <tr>
+                              <th colspan="8"><input class="form-control" placeholder="Search Here"></th>
+                            </tr>
+                        <th>No</th>
+                        <th>Exam Name</th>
+                        <th>Pass Mark</th>
+                        <th>Fee</th>
+                        <th>Retake Fee</th>
+                        <th>Col</th>
+                        <th>Instructions</th>
+                        <th>Option</th>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor=" let exam of ExamList">
+                           <td>{{exam.id}}</td>
+                           <td>{{exam.examName}}</td>
+                           <td>{{exam.passMark}}</td>
+                           <td>{{exam.fee |currency: '&#8358;' }}</td>
+                           <td>{{exam.retakeFee | currency: '&#8358;'}}</td>
+                           <td>{{exam.col}}</td>
+                           <td>{{exam.instruction}}</td>
+                           <td>
+                             <button (click)="editExam(exam.id)"  mat-button class="btn btn-info btn-sm"><mat-icon>edit</mat-icon>Edit</button>
+                             <button (click)="deleteExam(exam.id)" mat-button class="btn btn-danger btn-sm">
+                               <mat-icon>delete</mat-icon>Delete
+                             </button>
+                           </td>
+                          </tr>
+                      </tbody>
+                  </table>
+               </div>
+                <button (click)="addExam()" color="primary" mat-button mat-raised-button class="btn btn-md">add</button>
+              </div>
+          </form>
+        </mat-card-content>
+      </mat-card>
+</div>
+<div  fxShow="true" fxHide.gt-sm="true" >
+ 
+       <div class="row">
+          <div class="col-md-12">
+              <div class="mat-card mt-2" *ngFor=" let exam of ExamList">
+                  <div class="mat-card-content"> 
+                      <div class="container-fluid">
+                          <div class="row formation">
+                              <div class="col">Exam Name</div>
+                              <div class="col">{{exam.examName}}
+                              </div>
+                           </div>
+                           <div class="row formation">
+                              <div class="col">Pass Mark</div>
+                              <div class="col">{{exam.passMark}}
+                              </div>
+                           </div>
+                           <div class="row formation">
+                              <div class="col">Exam Fee</div>
+                              <div class="col">{{exam.fee | currency:'&#8358;'}}</div>
+                           </div>
+                           <div class="row formation">
+                              <div class="col">Description</div>
+                              <div class="col">{{exam.retakeFe | currency:'&#8358;'}}</div>
+                           </div>
+                           <div class="row formation">
+                              <div class="col">Col</div>
+                              <div class="col">{{exam.col}}</div>
+                           </div>
+                           <div class="row formation">
+                              <div class="col">Instruction</div>
+                              <div class="col">{{exam.instruction}}</div>
+                           </div>
+                           <div class="row mt-1">
+                             <div class="col offset-4 offset-md-5">
+                                <button (click)="editExam(exam.id)" class="btn btn-info btn-sm fa fa-edit">Edit</button>
+                                 <button (click)="deleteExam(account.id)" class="btn btn-danger btn-sm fa fa-trash">Delete</button>
+                             </div>
+                           </div>
+                      </div>
+                   </div>
+             </div>
+             <button (click)="addExam()" color="primary" mat-button mat-raised-button class="btn btn-sm mt-3">add</button>
+          </div>
+       </div>
+</div>

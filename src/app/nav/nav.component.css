@@ -1,19 +1,20 @@
 .example-icon {
     padding: 0 14px;
   }
-  mat-toolbar{box-shadow: 0 0 3px 2px  black}
+  mat-toolbar{box-shadow: 0 0 3px 2px  black;height: 42px;}
   .example-spacer {
     flex: 1 1 auto;
   }
   li{list-style-type: none}
   a{color: #fff}
-  .secmat{
-            margin-top:-5px;
+   /* .secmat{
+         
             background-color:teal;
-            height: 20px;
-            font-size: 12px;padding-bottom: 1px;padding-top:10px;padding-top: 10px;position:relative;top:4px;padding-bottom:12px;} 
-    .secmat button{padding-left: 1px;color:#fff;}
+            height: 15px;
+            font-size: 12px;padding-bottom: 1px;padding-top:10px;padding-top: 10px;position:relative;top:4px;padding-bottom:12px;}  
     
+    .secmat a{padding-left: 1px;color:#fff;text-decoration: none}
+    .secmat a.active{background-color:#989898;color: #fff;height: 15px;padding-bottom: 1px;padding-top:10px;padding-top: 10px;position:relative;top:4px;padding-bottom:12px;} */
     @media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
     @media (min-width:1281px) { /* hi-res laptops and desktops */ }
     .example-container {
@@ -27,8 +28,4 @@
         /* padding: 10px */
         padding-bottom: -10px
       }
-      mat-toolbar{height: 50px;}
-      mat-toolbar li{border-right:1px solid rgb(32, 3, 3);}
-      mat-list{position: relative;top:-10px;bottom: 0}
-      mat-list-item{margin-top:-20px}
-   
+      

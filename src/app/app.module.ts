@@ -29,6 +29,17 @@ import { ExamComponent } from './exam/exam.component';
 import { ExamService } from './service/exam.service';
 import { ExamListComponent } from './exam-list/exam-list.component';
 import { ExamSetUpComponent } from './exam-set-up/exam-set-up.component';
+import { AccountComponent } from './account/account.component';
+import { AccountlistComponent } from './accountlist/accountlist.component';
+import { AccountService } from './service/account.service';
+import { AccountChartComponent } from './account-chart/account-chart.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashrecComponent } from './dashrec/dashrec.component';
+import { HttpClientModule } from  '@angular/common/http';
+import { DashCourseComponent } from './dash-course/dash-course.component';
+import { DashCourseService } from './service/dash-course.service';
+import { CoursesFullRecComponent } from './courses-full-rec/courses-full-rec.component';
+
 
 @NgModule({
   
@@ -53,7 +64,14 @@ import { ExamSetUpComponent } from './exam-set-up/exam-set-up.component';
     SelComponent,
     ExamComponent,
     ExamListComponent,
-    ExamSetUpComponent
+    ExamSetUpComponent,
+    AccountComponent,
+    AccountlistComponent,
+    AccountChartComponent,
+    DashboardComponent,
+    DashrecComponent,
+    DashCourseComponent,
+    CoursesFullRecComponent
   ],
   imports: [
     
@@ -63,11 +81,12 @@ import { ExamSetUpComponent } from './exam-set-up/exam-set-up.component';
     FlexLayoutModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
  
   ],
-  providers: [ExamService],
-  entryComponents:[ExamComponent],
+  providers: [ExamService, AccountService,DashCourseService],
+  entryComponents:[ExamComponent,AccountComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

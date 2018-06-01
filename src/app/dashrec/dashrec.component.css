@@ -1,0 +1,22 @@
+.cont-fluid{
+    width: 100%;
+    padding-right: 4px !important;
+    padding-left: 4px !important;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.progress{height: 3px !important;}
+
+
+ @media (max-width: 569px) {
+    .card{padding: 5px !important;
+        margin-bottom: 12px}
+} 
+.cl-6{
+    -ms-flex: 0 0 46%;
+    flex: 0 0 46%;
+    max-width: 47%;
+
+}
+mat-progress-bar{height: 3px;}

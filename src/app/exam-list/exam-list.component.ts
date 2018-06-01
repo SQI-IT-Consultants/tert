@@ -43,8 +43,9 @@ export class ExamListComponent implements OnInit {
   }
   deleteExam(id: number)
   {
-    id-=1;
     this._examService.deleteExam(id);
+    
+    
   }
 }
  

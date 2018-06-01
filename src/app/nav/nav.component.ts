@@ -1,27 +1,28 @@
 import {MediaMatcher} from '@angular/cdk/layout';
-import { Component, OnInit, ChangeDetectorRef, } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css']
 })
-export class NavComponent implements OnInit {
-  
-  constructor() { }
 
+export class NavComponent implements OnInit {
+  constructor() { 
+
+  }
   ngOnInit() {
   }
   public ans;
   
   public navigation = [
                         {"id":"0","name":"Home",icon:"fa fa-home",
-                              sub:[{"id":"0","name":"Dashboard","link":"/home/dashboard"},
+                              sub:[{"id":"0","name":"Dashboard","link":"dashboard"},
                                     {"id":"1","name":"Logout","link":"/home/logout"}
                                   ]
                         },
                         {"id":"1","name":"Exam SetUp",icon:"fa fa-book",
-                              sub:[{"id":"0","name":"ExamSetUp","link":"/exam/examSetUp"},
+                              sub:[{"id":"0","name":"ExamSetUp","link":"examSetUp"},
                                     {"id":"1","name":"Section SetUp","link":"/exam/SectionSetUp"},
                                     {"id":"2","name":"examSignIn","link":"/exam/examSignIn"}
                                   ]},
@@ -91,7 +92,7 @@ export class NavComponent implements OnInit {
                                 ]},
                         {"id":"9","name":"Accounting",icon:"fa fa-btc",
                               sub:[{"id":"0", "name":"Default","link":"/account/default"},
-                                    {"id":"1", "name":"Account Chart","link":"/account/chart"},
+                                    {"id":"1", "name":"Account Chart","link":"accountChart"},
                                     {"id":"0", "name":"Task","link":"/account/task"},
                                     {"id":"3", "name":"Fee Setup","link":"/account/fee"},
                                     {"id":"4", "name":"Confirm Payment","link":"/account/paymentConfirm"},
@@ -125,7 +126,7 @@ export class NavComponent implements OnInit {
    public ext      =  [
                         {
                           "name":"Home",
-                         "id":"0", sub:[{"id":"0","name":"Dashboard","link":"/home/dashboard"},
+                         "id":"0", sub:[{"id":"0","name":"Dashboard","link":"dashboard"},
                                     {"id":"1","name":"Logout","link":"/home/logout"}]
                         },
                         {
@@ -210,7 +211,7 @@ export class NavComponent implements OnInit {
                          {
                            "name":"Accounting",
                           "id":"9", sub:[{"id":"0", "name":"Default","link":"/account/default"},
-                                     {"id":"1", "name":"Account Chart","link":"/account/chart"},
+                                     {"id":"1", "name":"Account Chart","link":"accountChart"},
                                      {"id":"0", "name":"Task","link":"/account/task"},
                                      {"id":"3", "name":"Fee Setup","link":"/account/fee"},
                                      {"id":"4", "name":"Confirm Payment","link":"/account/paymentConfirm"},
